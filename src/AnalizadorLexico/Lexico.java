@@ -28,15 +28,13 @@ public class Lexico extends javax.swing.JFrame {
     public char PalaReservada(char[] recebe) {
 
         char[] reservada = new char[recebe.length];
-        for (int i = 0; i < reservada.length; i++) {
-            reservada[i] = recebe[i]; 
-            
-        }
+        System.arraycopy(recebe, 0, reservada, 0, reservada.length);
 
         if (Arrays.equals("begin".toCharArray(), reservada)) {
            System.out.println("Classifica: " + Arrays.toString(reservada));
 
         } else {
+            JOptionPane.showMessageDialog(null,"Palavra invalida");
         }
         return 0;
     }
